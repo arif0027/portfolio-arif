@@ -247,7 +247,10 @@ body{
 /* Media query for smaller screens */
 @media only screen and (max-width: 600px) {
   .content {
-    top: 5% !important;
+    top: 20% !important;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
   }
 
   .hero-con h1 {
@@ -277,57 +280,33 @@ body{
   }
 }
 
-/* Responsive styles for even smaller screens, e.g., mobile phones */
-@media (max-width: 768px) {
+@media (min-width: 601px) and (max-width: 768px) {
   .content {
-    top: 42px;
-  }
-
-  .hero-con h1 {
-    font-size: 28px;
-  }
-
-  .hero-con h3 {
-    font-size: 14px;
-  }
-
-  .btn1 a {
-    font-size: 14px;
-    padding: 10px 15px;
-  }
-
-  .btn2 a {
-    font-size: 14px;
-    padding: 8px 20px;
+    top: 50%;
+    left: 46%;
+    transform: translate(-50%, -50%);
+    width: 70%;
   }
 }
 
-
-
-/* Responsive styles for smaller screens */
-@media (max-width: 992px) {
+/* Media query for tablets */
+@media (min-width: 992px) and (max-width: 1199px) {
   .content {
-    top: 100px;
+    top: 40%;
+    left: 38%;
+    transform: translate(-50%, -50%);
+    width: 60%;
   }
+}
 
-  .hero-con h1 {
-    font-size: 36px;
+/* Responsive styles for larger screens */
+@media (min-width: 1200px) {
+  .content {
+    top: 50%;
+    left: 31%;
+    transform: translate(-50%, -50%);
+    width: 50%;
   }
-
-  .hero-con h3 {
-    font-size: 16px;
-  }
-  .more-about a {
-    font-size: 0.6rem;
-    padding: 5px 8px;
-  }
-  .portfoio-btn a {
-    margin-right: 50px;
-    font-size: 0.6rem;
-    padding: 5px 20px;
-    border: 1px solid #15bb62;
-  }
-  
 }
 
 
@@ -808,35 +787,39 @@ body{
 }
 
 
-
 /* package part start */
-.card-body{
+.card-body {
   background: #272727;
   border-radius: 26px;
   padding: 60px 42px 20px 20px;
 }
-.card-body>a>i{
+
+.card-body > a > i {
   color: white;
 }
-.card-body h2{
+
+.card-body h2 {
   font-family: 'Poppins', sans-serif;
   color: #fff;
   font-weight: 700;
   font-size: 36px;
 }
-.card-body h3{
+
+.card-body h3 {
   font-family: 'Poppins', sans-serif;
   color: #18d26e;
   font-weight: 700;
   font-size: 26px;
 }
-.card-body p{
+
+.card-body p {
   font-family: 'Poppins', sans-serif;
   color: #d8d8d8;
   font-weight: 400;
   font-size: 15px;
 }
-.card-body span{
+
+.card-body span {
   font-family: 'Poppins', sans-serif;
   color: #d8d8d8;
   font-weight: 400;
@@ -844,7 +827,8 @@ body{
   margin-left: 5px;
   line-height: 35px;
 }
-.choose-btn a{
+
+.choose-btn a {
   padding: 6px 25px;
   background-color: #18d26e;
   border-radius: 24px;
@@ -852,27 +836,32 @@ body{
   font-weight: 700;
   font-size: 15px;
 }
-.full-card{
+
+.full-card {
   position: relative;
 }
-.full-card .card-body:hover{
+
+.full-card .card-body:hover {
   transform: translateY(-30px);
   background-color: #18d26e;
   transition: all linear 0.3s;
 }
+
 .pack-card .full-card:hover .card-body h2,
 .pack-card .full-card:hover .card-body h3,
 .pack-card .full-card:hover .card-body p,
-.pack-card .full-card:hover .card-body span{
+.pack-card .full-card:hover .card-body span {
   color: #fff;
   transition: all linear 0.3s;
 }
-.pack-card .full-card:hover .card-body .choose-btn a{
+
+.pack-card .full-card:hover .card-body .choose-btn a {
   background-color: #fff;
   color: #15bb62;
   transition: all linear 0.3s;
 }
-.package-overlay{
+
+.package-overlay {
   position: absolute;
   top: -10px;
   right: 15px;
@@ -886,15 +875,53 @@ body{
   transition: all linear .3s;
   border-radius: 20px;
 }
-.package-overlay a{
-  color: #fff; 
+
+.package-overlay a {
+  color: #fff;
 }
-.pack-card .full-card:hover .card-body .package-overlay{
+
+.pack-card .full-card:hover .card-body .package-overlay {
   transform: scale(1);
   opacity: 1;
   transition: all linear 0.3s;
 }
+
+/* Responsive styles for mobile devices */
+@media only screen and (max-width: 767px) {
+  .card-body {
+    padding: 40px 30px 10px 10px;
+  }
+}
+
+/* Responsive styles for tablets */
+@media (min-width: 768px) and (max-width: 991px) {
+  .pack-card .col-lg-3 {
+    flex: 0 0 50%; /* Display two cards per row */
+  }
+}
+
+/* Responsive styles for laptops - small */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .pack-card .col-lg-3 {
+    flex: 0 0 50%; /* Display two cards per row */
+  }
+}
+
+/* Responsive styles for laptops - medium */
+@media (min-width: 1200px) and (max-width: 1439px) {
+  .pack-card .col-lg-3 {
+    flex: 0 0 33.3333%; /* Display three cards per row */
+  }
+}
+
+/* Responsive styles for laptops - large */
+@media (min-width: 1440px) {
+  .pack-card .col-lg-3 {
+    flex: 0 0 25%; /* Display four cards per row */
+  }
+}
 /* package part end */
+
 
 
 /* ------------------ Clients Style ---------------- */
